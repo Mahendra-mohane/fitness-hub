@@ -3,7 +3,7 @@ const {connection}=require("./config/mongo_DB")
 const {userRouter}=require("./routes/userRouter")
 const {classesRouter}=require("./routes/classesRouter")
 const {ordersRouter}=require("./routes/ordersRouter")
-const { dashboardRouter } = require("./routes/adminRouter");
+const { dashboardRouter } = require("./routes/adminDashRouter");
 const {UserModel} = require("./models/userModel");
 const cors = require('cors')
 require('dotenv').config()

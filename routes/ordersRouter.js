@@ -9,12 +9,12 @@ const {UserModel} = require("../models/userModel");
 const {mailOrderDetail} = require("../config/mailer");
 const ordersRouter = express.Router();
 
-// Order Page
+// Order Page....
 ordersRouter.get("/",(req,res)=>{
     res.status(200).send({message:"Orders Page"})
 })
 
-// Orders - Get All Orders
+// Orders - Get All Orders.....
 ordersRouter.get("/all", async (req,res)=>{
     try{
         let orders = await OrdersModel.find();
@@ -24,7 +24,7 @@ ordersRouter.get("/all", async (req,res)=>{
     }
 })
 
-// orders - Single orders Detail
+// orders - Single orders Detail....
 ordersRouter.get("/:id", async (req,res)=>{
     let ordersID= req.params.id;
     try{
@@ -36,7 +36,7 @@ ordersRouter.get("/:id", async (req,res)=>{
 })
 
 
-//all orders of single users
+//all orders of single users.....
 ordersRouter.get("/user/:id", async (req,res)=>{
     let userID= req.params.id;
     try{
@@ -47,7 +47,7 @@ ordersRouter.get("/user/:id", async (req,res)=>{
     }
 })
 
-// Order Check Availablity
+// Order Check Availablity.....
 ordersRouter.post("/checkAvailablity", async (req,res)=>{
     let payload = req.body;
     // console.log(payload) 

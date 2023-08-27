@@ -1,7 +1,6 @@
 // all order model code Headers.....
 
 const mongoose = require("mongoose");
-
 const ordersSchema = mongoose.Schema({
     price:Number,
     classID:String,
@@ -13,7 +12,6 @@ const ordersSchema = mongoose.Schema({
 },{
     versionKey:false
 })
-
 const OrdersModel = mongoose.model("orders",ordersSchema);
 
 module.exports={OrdersModel};

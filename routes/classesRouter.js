@@ -7,9 +7,11 @@ require('dotenv').config()
 let {get_date,get_time}=require("../utils/date_time")
 
 
+
+
 const classesRouter = express.Router();
 
-// class Page
+// class Page here 
 classesRouter.get("/",(req,res)=>{
     res.status(200).send({message:"classes Page"})
 })
@@ -37,7 +39,7 @@ classesRouter.get("/searchByUserID/:id", async (req,res)=>{
 
 
 
-// class - Get All classes by Trainer
+// class - Get All classes by Trainer...
 classesRouter.get("/searchByTrainerID/:id", async (req,res)=>{
     let userID=req.params.id
     try{
@@ -49,7 +51,7 @@ classesRouter.get("/searchByTrainerID/:id", async (req,res)=>{
 })
 
 
-// class - Single class Detail
+// class - Single class Detail...
 classesRouter.get("/:id", async (req,res)=>{
     let classesID= req.params.id;
     try{
@@ -60,7 +62,7 @@ classesRouter.get("/:id", async (req,res)=>{
     }
 })
 
-// classes creation
+// classes creation.....
 classesRouter.post("/create", async (req,res)=>{
     let payload = req.body;
     payload.createdDate=get_date();
@@ -68,8 +70,6 @@ classesRouter.post("/create", async (req,res)=>{
     payload.trainerID=payload.userID;
     payload.trainerName=payload.username;
     payload.seatOccupied=0;
-
-    // res.send({message:"Class created",classes:payload})
 
     try{
         let classes = new ClassesModel(payload);
@@ -82,7 +82,7 @@ classesRouter.post("/create", async (req,res)=>{
 })
 
 
-// class Update
+// class Update......
 classesRouter.patch("/update/:id", async (req,res)=>{
     let classesID= req.params.id;
     let payload = req.body;
@@ -94,7 +94,7 @@ classesRouter.patch("/update/:id", async (req,res)=>{
     }
 })
 
-// class Delete
+// class Delete.....
 classesRouter.delete("/delete/:id", async (req,res)=>{
     let classesID= req.params.id;
 
@@ -107,7 +107,7 @@ classesRouter.delete("/delete/:id", async (req,res)=>{
 })
 
 
-// class Update - TESTING ONLY
+// class Update - TESTING ONLY.....
 classesRouter.patch("/updateTest", async (req,res)=>{
     try{
         let classes = await ClassesModel.updateMany({venue:"online"},{locationOrLink:"https://us06web.zoom.us/j/81535378377"});        

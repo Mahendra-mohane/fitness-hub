@@ -1,7 +1,6 @@
 // all admin model  code here...
 
 const mongoose = require("mongoose");
-
 const adminSchema = mongoose.Schema({
   name: {
     type: String,

@@ -1,6 +1,5 @@
 // all classes  model here
 const mongoose = require("mongoose");
-
 const classesSchema = mongoose.Schema({
     title:{type:String,required:true},
     seatTotal:Number,
@@ -21,5 +20,8 @@ const classesSchema = mongoose.Schema({
 })
 
 const ClassesModel = mongoose.model("class",classesSchema);
+
+
+
 
 module.exports={ClassesModel};
